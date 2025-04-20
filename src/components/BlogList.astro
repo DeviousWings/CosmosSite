@@ -1,17 +1,10 @@
 ---
-type Post = {
-  title: string;
-  slug: string;
-  description: string;
-  date: string;
-};
-
-const { posts } = Astro.props as { posts: Post[] };
+const { posts } = Astro.props;
 ---
 
 <div class="blog-grid">
-  {posts.map((post) => (
-    <a href={`/blog/${post.slug}`} class="blog-card">
+  {posts.map(post => (
+    <a href={post.slug} class="blog-card" target="_blank">
       <h2>{post.title}</h2>
       <p>{post.description}</p>
       <small>{new Date(post.date).toLocaleDateString()}</small>

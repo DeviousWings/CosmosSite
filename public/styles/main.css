@@ -383,21 +383,47 @@ body {
   background-color: var(--bg);
 }
 
-.blog-grid {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+.blog-section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.blog-section h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+.blog-section .blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.blog-section .blog-card {
+  background: var(--paragraph-background-color);
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: var(--text-light);
+  transition: background 0.3s ease;
+}
+.blog-section .blog-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+.blog-section .blog-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+.blog-section .blog-card small {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.blog-section .blog-card:hover {
+  background: #29294d;
 }
 
-@media (max-width: 768px) {
-  .blog-section {
-    padding: 1rem;
-  }
-  .blog-section .blog-card {
-    padding: 1rem;
-  }
-}
 .library-section {
   padding: 3rem 2rem;
   max-width: 1000px;

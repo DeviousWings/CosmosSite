@@ -1,24 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-// import Header from "../components/Header.astro";
 import BlogList from "../components/BlogList.astro";
+import getSubstackPosts from "../../public/scripts/getSubstackPosts.js";
 
-const posts = [
-  {
-    title: "Why Orbital Shipyards Matter",
-    slug: "orbital-shipyards",
-    description: "A future where we build ships off-Earth",
-    date: "2025-04-17",
-  },
-  {
-    title: "AI in Deep Space",
-    slug: "ai-space",
-    description: "Exploring machine learning in zero gravity",
-    date: "2025-04-16",
-  }
-];
+const posts = await getSubstackPosts();
 ---
+
 <Layout title="Blog | Cosmos Library">
-  <h1>Blog</h1>
-  <BlogList posts={posts} />
+  <section class="blog-section">
+    <h1>🚀 Blog</h1>
+    <BlogList posts={posts} />
+  </section>
 </Layout>
