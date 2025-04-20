@@ -1,0 +1,16 @@
+.blog-grid  {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 1rem;
+
+    .blog-card {
+      padding: 1rem;
+    }
+  }
+}

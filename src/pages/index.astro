@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import FeaturedPosts from "../components/FeaturedPosts.astro";
+import MainFocusSlider from "../components/MainFocusSlider.astro";
+import SubstackPreview from "../components/SubstackPreview.astro";
+---
+
+<Layout title="Home | The Cosmos Library">
+  <Hero />
+
+  <section class="featured-posts">
+    <FeaturedPosts />
+  </section>
+
+  <section class="main-focus">
+    <MainFocusSlider />
+  </section>
+
+  <section class="substack-preview">
+    <SubstackPreview />
+  </section>
+</Layout>

@@ -1,0 +1,39 @@
+#substack-preview {
+  background-color: var(--paragraph-background-color); // or --bg
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--text-light);
+
+  h2 {
+    color: var(--accent);
+    margin-bottom: 2rem;
+  }
+
+  #space-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-height: 150px; // 👈 This prevents the flash of empty white space
+  }
+
+  .substack-card {
+    background-color: #1a1b3c;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: left;
+    color: var(--text-light);
+
+    h3 a {
+      color: var(--accent);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+}

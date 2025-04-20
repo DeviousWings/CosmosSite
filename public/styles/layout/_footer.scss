@@ -1,0 +1,28 @@
+footer {
+  background: var(--nav-hover-background-color);
+  text-align: center;
+  padding: 1em;
+  color: var(--text-muted);
+  font-family: var(--font-main);
+}
+
+.btn-coffee {
+  background: var(--accent);
+  color: var(--headline-color-on-white);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  margin-bottom: 2rem;
+  display: inline-block;
+  cursor: pointer;
+}
+
+footer nav a {
+  color: var(--text-muted);
+  margin: 0 1em;
+  text-decoration: none;
+}
+footer nav a:hover {
+  color: var(--text-light);
+}/*# sourceMappingURL=home.css.map */
