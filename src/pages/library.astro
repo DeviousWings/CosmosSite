@@ -1,17 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import fetchNasaAPOD from "../../public/scripts/fetchNasaAPOD";
+import fetchMarsPhotos from "../../public/scripts/fetchMarsRoverPhotos";
+
+const apod = await fetchNasaAPOD();
+const marsPhotos = await fetchMarsPhotos();
 ---
 
-<Layout title="Library | The Cosmos Library">
+<Layout title="Library | Cosmos Library">
   <section class="library-section">
-    <h1>📚 The Cosmos Library</h1>
-    <p>
-      Dive into curated content on space missions, open APIs, telescope data, and more. This page will evolve to showcase real-time integrations and long-form research.
-    </p>
+    <h1>🛰️ The Cosmos Library</h1>
+    <p>Dive into curated content on space missions, open APIs, telescope data, and more. This page will evolve to showcase real-time integrations and long-form research.</p>
+    <p>🚧 Library content still under construction...</p>
+    <!-- APOD Card -->
+    <div class="library-grid">
+      <div class="library-card">
+        <h2>📸 Astronomy Picture of the Day</h2>
+        <img src={apod.url} alt={apod.title} />
+        <h3>{apod.title}</h3>
+        <p>{apod.explanation}</p>
+      </div>
 
-    <div class="library-content">
-      <!-- Add categories, API blocks, or dynamic cards here -->
-      <p>🚧 Library content coming soon...</p>
-    </div>
+      <!-- Mars Rover Photos -->
+      <div class="library-card">
+        <h2>🚗 Curiosity Rover — Sol 1000</h2>
+        <div class="mars-grid">
+          {marsPhotos.map(photo => (
+            <div class="mars-photo">
+              <img src={photo.img_src} alt={`Mars photo taken by ${photo.rover.name}`} />
+              <small>{photo.rover.name} • {photo.camera.full_name}</small>
+            </div>
+          ))}
+        </div>
+  </div>
   </section>
 </Layout>
