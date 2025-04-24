@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import fetchNasaAPOD from "../../public/scripts/fetchNasaAPOD";
-import fetchMarsPhotos from "../../public/scripts/fetchMarsRoverPhotos";
+import fetchNasaAPOD from "../utils/fetchNasaAPOD";
+import fetchMarsPhotos from "../utils/fetchMarsRoverPhotos";
+ 
 
 const apod = await fetchNasaAPOD();
 const marsPhotos = await fetchMarsPhotos();
@@ -24,14 +25,24 @@ const marsPhotos = await fetchMarsPhotos();
       <!-- Mars Rover Photos -->
       <div class="library-card">
         <h2>🚗 Curiosity Rover — Sol 1000</h2>
-        <div class="mars-grid">
-          {marsPhotos.map(photo => (
-            <div class="mars-photo">
-              <img src={photo.img_src} alt={`Mars photo taken by ${photo.rover.name}`} />
-              <small>{photo.rover.name} • {photo.camera.full_name}</small>
-            </div>
-          ))}
+        <div class="rover-slideshow">
+          <div class="rover-slide-container">
+            {marsPhotos.map((photo, i) => (
+              <div class={`rover-slide${i === 0 ? " active" : ""}`}>
+                <img src={photo.img_src} alt={`Photo by ${photo.rover.name}`} />
+                <small>{photo.rover.name} • {photo.camera.full_name}</small>
+              </div>
+            ))}
+          </div>
+          <div class="rover-controls">
+            <button id="prevRover">&#11013;</button>
+            <button id="nextRover">&#10145;</button>
+          </div>
         </div>
-  </div>
+      </div>
+    </div>
+      
   </section>
+  <script type="module" src="/scripts/roverSlideshow.js"></script>
+
 </Layout>

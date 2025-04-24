@@ -453,7 +453,8 @@ body {
   gap: 2rem;
   margin-top: 2rem;
 }
-.library-grid .library-card {
+
+.library-card {
   background-color: var(--paragraph-background-color);
   padding: 2rem;
   border-radius: 12px;
@@ -462,55 +463,108 @@ body {
   margin-bottom: 2rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
 }
-.library-grid .library-card h2 {
+.library-card h2 {
   color: var(--accent);
   font-size: 1.25rem;
   margin-bottom: 1rem;
 }
-.library-grid .library-card h3 {
+.library-card h3 {
   color: var(--primary);
   font-size: 1.1rem;
   margin: 1rem 0 0.5rem;
 }
-.library-grid .library-card p {
+.library-card p {
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.5;
 }
-.library-grid .library-card img {
+.library-card img {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
-.library-grid .library-card a {
+.library-card a {
   display: inline-block;
   margin-top: 0.5rem;
   color: var(--primary);
   font-weight: 600;
   text-decoration: none;
 }
-.library-grid .library-card a:hover {
+.library-card a:hover {
   color: var(--accent);
 }
-.library-grid .mars-grid {
+
+.mars-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
 }
-.library-grid .mars-photo {
+
+.mars-photo {
   background-color: #1a1b3c;
   padding: 1rem;
   border-radius: 10px;
 }
-.library-grid .mars-photo img {
+.mars-photo img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 0.5rem;
 }
-.library-grid .mars-photo small {
+.mars-photo small {
   color: var(--text-muted);
   font-size: 0.9rem;
+}
+
+.rover-slideshow {
+  position: relative;
+  overflow: hidden;
+}
+.rover-slideshow .rover-slide-container {
+  position: relative;
+}
+.rover-slideshow .rover-slide {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+.rover-slideshow .rover-slide img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+.rover-slideshow .rover-slide small {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+}
+.rover-slideshow .rover-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+}
+.rover-slideshow .rover-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.rover-slideshow .rover-controls button {
+  background: none;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.rover-slideshow .rover-controls button:hover {
+  background: var(--accent);
+  color: var(--bg);
 }
 
 @media (max-width: 700px) {

@@ -22,12 +22,13 @@
     border-radius: 12px;
   }
 }
+
 .library-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
-
+}
 
 .library-card {
   background-color: var(--paragraph-background-color);
@@ -98,7 +99,66 @@
     font-size: 0.9rem;
   }
 }
+
+.rover-slideshow {
+  position: relative;
+  overflow: hidden;
+
+  .rover-slide-container {
+    position: relative;
+  }
+
+  .rover-slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
+
+    small {
+      display: block;
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+    }
+  }
+
+  .rover-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    position: relative;
+  }
+
+  .rover-controls {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    button {
+      background: none;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+
+      &:hover {
+        background: var(--accent);
+        color: var(--bg);
+      }
+    }
+  }
 }
+
 @media (max-width: 700px) {
   .library-section {
     padding: 2rem 1rem;

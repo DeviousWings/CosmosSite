@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BlogList from "../components/BlogList.astro";
-import getSubstackPosts from "../../public/scripts/getSubstackPosts.js";
+import getSubstackPosts from "../utils/getSubstackPosts.js";
 
 const posts = await getSubstackPosts();
 ---
