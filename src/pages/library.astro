@@ -14,33 +14,42 @@ const marsPhotos = await fetchMarsPhotos();
     <p>Dive into curated content on space missions, open APIs, telescope data, and more. This page will evolve to showcase real-time integrations and long-form research.</p>
     <p>🚧 Library content still under construction...</p>
     <!-- APOD Card -->
-    <div class="library-grid">
-      <div class="library-card">
-        <h2>📸 Astronomy Picture of the Day</h2>
+    <div class="library-grid custom-layout">
+      <!-- LARGE: NASA / APOD CARD -->
+      <div class="library-card large-card">
+        <h2>🌌 Astronomy Picture of the Day</h2>
         <img src={apod.url} alt={apod.title} />
         <h3>{apod.title}</h3>
         <p>{apod.explanation}</p>
       </div>
-
-      <!-- Mars Rover Photos -->
-      <div class="library-card">
-        <h2>🚗 Curiosity Rover — Sol 1000</h2>
-        <div class="rover-slideshow">
-          <div class="rover-slide-container">
-            {marsPhotos.map((photo, i) => (
-              <div class={`rover-slide${i === 0 ? " active" : ""}`}>
-                <img src={photo.img_src} alt={`Photo by ${photo.rover.name}`} />
-                <small>{photo.rover.name} • {photo.camera.full_name}</small>
-              </div>
-            ))}
+    
+      <!-- RIGHT COLUMN: Two stacked smaller cards -->
+      <div class="side-card-group">
+        <div class="library-card small-card">
+          <h2>🚗 Curiosity Rover — Sol 1000</h2>
+          <div class="rover-slideshow">
+            <div class="rover-slide-container">
+              {marsPhotos.map((photo, i) => (
+                <div class={`rover-slide${i === 0 ? " active" : ""}`}>
+                  <img src={photo.img_src} alt={`Photo by ${photo.rover.name}`} />
+                  <small>{photo.rover.name} • {photo.camera.full_name}</small>
+                </div>
+              ))}
+            </div>
+            <div class="rover-controls">
+              <button id="prevRover">&#11013;</button>
+              <button id="nextRover">&#10145;</button>
+            </div>
           </div>
-          <div class="rover-controls">
-            <button id="prevRover">&#11013;</button>
-            <button id="nextRover">&#10145;</button>
-          </div>
+        </div>
+    
+        <div class="library-card small-card">
+          <h2>🛰️ JWT API</h2>
+          <p>Placeholder for James Webb Telescope data integrations.</p>
         </div>
       </div>
     </div>
+    
       
   </section>
   <script type="module" src="/scripts/roverSlideshow.js"></script>

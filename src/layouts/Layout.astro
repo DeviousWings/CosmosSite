@@ -25,6 +25,32 @@ const {
         <a href="/" class="logo">
           <img src="/images/space_rd.jpg" alt="Cosmos Library Logo" />
         </a>
+      </div>
+      <div id="user-time-info">
+        <!-- Time info will appear here -->
+      </div>
+
+<script is:inline>
+  function updateUserTimeInfo() {
+    const now = new Date();
+    const utcHours = now.getUTCHours().toString().padStart(2, '0');
+    const utcMinutes = now.getUTCMinutes().toString().padStart(2, '0');
+    const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+    const timeInfoDiv = document.getElementById('user-time-info');
+    if (timeInfoDiv) {
+      timeInfoDiv.innerHTML = `
+        <div style="text-align: right; font-size: 0.8rem;">
+          UTC: ${utcHours}:${utcMinutes} | ${userTimezone}
+        </div>
+      `;
+    }
+  }
+
+  updateUserTimeInfo();
+  setInterval(updateUserTimeInfo, 60000); // Update every minute
+</script>
+      
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
           <li><a href="/blog">Blog</a></li>
