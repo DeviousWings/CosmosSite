@@ -1,7 +1,12 @@
 # 🌌 Cosmic Library
 
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg?style=for-the-badge)](https://github.com/DeviousWings/CosmicLibrary/issues)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](./LICENSE)
+[![Built with Astro](https://img.shields.io/badge/Built%20with-Astro-blueviolet?style=for-the-badge)](https://astro.build/)
+
 Welcome to the **Cosmic Library** — a dynamic space exploration portal featuring real-time data, astronomy media, and personal space research blogs.  
 Built with 🚀 Astro.js and powered by the vast beauty of space APIs like NASA APOD, Mars Rover Photos, and more.
+
 
 > "Exploration is really the essence of the human spirit." — Frank Borman
 
@@ -110,6 +115,7 @@ MARS_ROVER_API_KEY=your_api_key_here
 Contributions, ideas, and feedback are welcome!  
 Please check out our [Contributing Guide](./CONTRIBUTING.md) _(coming soon)_.
 
+
 ---
 
 ## 📜 License
@@ -120,7 +126,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📡 Connect
 
-- 🌐 [Your Portfolio Website](#)
+- 🌐 [Your Portfolio Website](https://deviouswings.github.io/PortDev/)
 - ✉️ Email: [yourname@example.com](mailto:yourname@example.com)
 - 🛸 Follow along as we build a living archive of the cosmos!
 
