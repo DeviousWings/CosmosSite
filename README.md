@@ -10,7 +10,6 @@ Built with 🚀 Astro.js and powered by the vast beauty of space APIs like NASA 
 ## 📸 Live Preview
 
 [🚀 View the Live Site](https://cosmiclibrary.netlify.app/)  
-*(Link coming soon when deployed)*
 
 ---
 
