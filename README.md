@@ -74,7 +74,7 @@ Through real-time data and engaging articles, we aim to inspire and educate the 
 
 For professional inquiries, partnerships, or licensing opportunities, please contact:
 
-🌐 Portfolio Website
+🌐 [Portfolio Website](https://deviouswings.github.io/PortDev/contact.html)
 
 ✉️ Email: yourname@example.com
 
