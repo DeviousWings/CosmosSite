@@ -1,11 +1,11 @@
 # 🌌 Cosmic Library
 
-[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg?style=for-the-badge)](https://github.com/DeviousWings/CosmicLibrary/issues)
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](./LICENSE)
 [![Built with Astro](https://img.shields.io/badge/Built%20with-Astro-blueviolet?style=for-the-badge)](https://astro.build/)
 
 Welcome to the **Cosmic Library** — a dynamic space exploration portal featuring real-time data, astronomy media, and personal space research blogs.  
 Built with 🚀 Astro.js and powered by the vast beauty of space APIs like NASA APOD, Mars Rover Photos, and more.
+
 
 
 > "Exploration is really the essence of the human spirit." — Frank Borman
@@ -54,70 +54,6 @@ Built with 🚀 Astro.js and powered by the vast beauty of space APIs like NASA 
 - **Deployment:** Netlify (Deployed)
 - **Other Tools:** Markdown for blogs, Responsive Design principles
 
----
-
-## 📂 Folder Structure
-
-```
-/public
-  /images
-  /styles
-/src
-  /components
-  /layouts
-  /pages
-  /utils
-.env (API keys - not committed)
-astro.config.mjs
-package.json
-README.md
-ROADMAP.md
-```
-
----
-
-## 🧑‍💻 Getting Started
-
-1. **Clone the Repository**
-
-```bash
-git clone https://github.com/YourUsername/CosmicLibrary.git
-cd CosmicLibrary
-```
-
-2. **Install Dependencies**
-
-```bash
-npm install
-```
-
-3. **Run Locally**
-
-```bash
-npm run dev
-```
-
-4. **Environment Variables**
-
-Create a `.env` file:
-
-```bash
-NASA_API_KEY=your_api_key_here
-MARS_ROVER_API_KEY=your_api_key_here
-```
-
-(You'll need free NASA API keys.)
-
----
-
-## ✨ Contributing
-
-Contributions, ideas, and feedback are welcome!  
-Please check out our [Contributing Guide](./CONTRIBUTING.md) _(coming soon)_.
-
-
----
-
 ## 📜 License
 
 This project is licensed under the [MIT License](LICENSE).
@@ -131,4 +67,14 @@ This project is licensed under the [MIT License](LICENSE).
 - 🛸 Follow along as we build a living archive of the cosmos!
 
 ---
+
+## 📡 About Cosmic Library
+The Cosmic Library is a curated knowledge hub dedicated to bringing the wonders of space exploration to researchers, students, and enthusiasts alike.
+Through real-time data and engaging articles, we aim to inspire and educate the next generation of cosmic explorers.
+
+For professional inquiries, partnerships, or licensing opportunities, please contact:
+
+🌐 Portfolio Website
+
+✉️ Email: yourname@example.com
 
