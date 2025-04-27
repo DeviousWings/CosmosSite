@@ -1,48 +1,105 @@
-# Astro Starter Kit: Basics
+# 🌌 Cosmic Library
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to the **Cosmic Library** — a dynamic space exploration portal featuring real-time data, astronomy media, and personal space research blogs.  
+Built with 🚀 Astro.js and powered by the vast beauty of space APIs like NASA APOD, Mars Rover Photos, and more.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+> \"Exploration is really the essence of the human spirit.\" — Frank Borman
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 📸 Live Preview
 
-## 🚀 Project Structure
+[🚀 View the Live Site](#)  
+*(Link coming soon when deployed)*
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 🛰️ Features
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+- ✨ Fetch Astronomy Picture of the Day (APOD)
+- 🚗 Display Mars Rover photos
+- 🔭 Soon: James Webb & Hubble Telescope images
+- 📝 Personal Blog Feed Integration (Substack)
+- 🔍 Searchable Library for Articles and Data
+- 📱 Fully Responsive Mobile Layout
+- 🌙 Dark Mode (Coming Soon)
+- ⚙️ API Error Handling and Optimization
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## 🚀 Project Roadmap
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Phase | Progress | Status |
+|:------|:---------|:-------|
+| **Phase 1: Core API Integration** | ██████████░░░░ 70% | 🔵 In Progress |
+| **Phase 2: Personal Blog System** | ████░░░░░░░░░░ 30% | ⚪ Not Started |
+| **Phase 3: Library Expansion** | ███░░░░░░░░░░░ 25% | ⚪ Not Started |
+| **Phase 4: UI/UX Polish** | ██░░░░░░░░░░░░ 15% | ⚪ Not Started |
+| **Phase 5: Hosting and Optimization** | ░░░░░░░░░░░░░░ 0% | ⚪ Not Started |
+| **Stretch Goals** | ░░░░░░░░░░░░░░ 0% | ⚪ Dream Stage 🌟 |
 
-## 👀 Want to learn more?
+🔗 [View Full Roadmap](./ROADMAP.md)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Astro.js, HTML5, SCSS
+- **Styling:** Custom SCSS Modules (No Tailwind)
+- **APIs:** NASA APOD, Mars Rover Photos, (future: James Webb, Hubble)
+- **Deployment:** Netlify (planned)
+- **Other Tools:** Markdown for blogs, Responsive Design principles
+
+---
+
+
+---
+
+## 🧑‍🚀 Getting Started
+
+1. **Clone the Repository**
+
+
+git clone https://github.com/YourUsername/CosmicLibrary.git
+cd CosmicLibrary
+
+✨ Contributing
+Contributions, ideas, and feedback are welcome!
+Please check out our Contributing Guide (coming soon).
+
+📜 License
+This project is licensed under the MIT License.
+
+📡 Connect
+🌐 Your Portfolio Website
+
+✉️ Email: yourname@example.com
+
+🛸 Follow along as we build a living archive of the cosmos!
+
+
+---
+
+# 🎯 What this README covers:
+- **Title** and **Welcome section**  
+- **Live Preview Link** placeholder  
+- **Features** list  
+- **Roadmap visual tracker**  
+- **Tech Stack**  
+- **Folder Structure**  
+- **Installation guide** (easy copy-paste)  
+- **Contribution invite**  
+- **License and Contact info**  
+
+---
+
+# 🛠️ Next Steps you can do:
+- Replace `https://github.com/YourUsername/CosmicLibrary.git` with your actual GitHub repo URL.
+- Replace `yourname@example.com` with your contact email if you want.
+- Update your **Portfolio Website** link once your portfolio is ready.
+- Add a `LICENSE` and `CONTRIBUTING.md` later if you want fully polished repo standards.
+
+---
+
+Would you like me to also create a **CONTRIBUTING.md** template for you so you are *fully open source ready* too? 🌟  
+(It's really fast, like 1 minute to whip up!)
