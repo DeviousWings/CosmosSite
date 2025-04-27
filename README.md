@@ -9,7 +9,7 @@ Built with 🚀 Astro.js and powered by the vast beauty of space APIs like NASA 
 
 ## 📸 Live Preview
 
-[🚀 View the Live Site](#)  
+[🚀 View the Live Site](https://cosmiclibrary.netlify.app/)  
 *(Link coming soon when deployed)*
 
 ---
@@ -47,7 +47,7 @@ Built with 🚀 Astro.js and powered by the vast beauty of space APIs like NASA 
 - **Frontend:** Astro.js, HTML5, SCSS
 - **Styling:** Custom SCSS Modules (No Tailwind)
 - **APIs:** NASA APOD, Mars Rover Photos, (future: James Webb, Hubble)
-- **Deployment:** Netlify (planned)
+- **Deployment:** Netlify (Deployed)
 - **Other Tools:** Markdown for blogs, Responsive Design principles
 
 ---
