@@ -62,7 +62,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📡 Connect
 
-- 🌐 [Your Portfolio Website](https://deviouswings.github.io/PortDev/)
+- 🌐 [My Portfolio Website](https://deviouswings.github.io/PortDev/)
 - ✉️ Email: [yourname@example.com](mailto:yourname@example.com)
 - 🛸 Follow along as we build a living archive of the cosmos!
 
