@@ -85,6 +85,15 @@
   p {
     color: var(--text-muted);
     line-height: 1.5;
+    overflow-wrap: break-word;
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
   }
 }
 
@@ -155,10 +164,12 @@
   .side-card-group {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .small-card {
-    flex: 1 1 100%;
+    flex: 1 1 45%;
+    margin: 0.5rem;
   }
 
   .library-section {

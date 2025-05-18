@@ -2,10 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 import fetchNasaAPOD from "../utils/fetchNasaAPOD";
 import fetchMarsPhotos from "../utils/fetchMarsRoverPhotos";
+// import fetchJWSTData from "../utils/fetchJWSTData";
  
 
 const apod = await fetchNasaAPOD();
 const marsPhotos = await fetchMarsPhotos();
+// const jwst = await fetchJWSTData();
 ---
 
 <Layout title="Library | Cosmos Library">
@@ -14,6 +16,7 @@ const marsPhotos = await fetchMarsPhotos();
     <p>Dive into curated content on space missions, open APIs, telescope data, and more. This page will evolve to showcase real-time integrations and long-form research.</p>
     <p>🚧 Library content still under construction...</p>
     <!-- APOD Card -->
+    <section>
     <div class="library-grid custom-layout">
       <!-- LARGE: NASA / APOD CARD -->
       <div class="library-card large-card">
@@ -43,13 +46,12 @@ const marsPhotos = await fetchMarsPhotos();
           </div>
         </div>
     
-        <div class="library-card small-card">
-          <h2>🛰️ JWT API</h2>
-          <p>Placeholder for James Webb Telescope data integrations.</p>
-        </div>
       </div>
     </div>
-    
+  </section>
+    <!-- The next section will be more in detail about the moon base, the mars base,
+     and the shipyard build -->
+
       
   </section>
   <script type="module" src="/scripts/roverSlideshow.js"></script>
