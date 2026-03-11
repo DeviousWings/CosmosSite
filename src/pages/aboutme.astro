@@ -3,18 +3,89 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="About Me | The Cosmos Library">
-  <section class="about-section">
-    <h1>👨‍🚀 About Nathanael</h1>
-    <p>
-      I'm the creator of the Cosmos Library — a place where space exploration meets open source software and future-focused tech. My background includes military IT, software engineering, and a lifelong obsession with deep space concepts.
+  <div class="about-hero">
+    <div class="about-hero-content">
+      <div class="about-avatar">👨‍🚀</div>
+      <h1>Nathanael King</h1>
+      <p class="about-tagline">Army Reserve IT · Software Engineer · Space Enthusiast</p>
+      <div class="about-badge-row">
+        <span class="about-badge">🔧 25B IT Specialist</span>
+        <span class="about-badge">🛠 Orbital Infrastructure</span>
+        <span class="about-badge">📡 NASA APIs</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="about-body">
+
+    <p class="about-intro">
+      I'm the creator of the Cosmos Library — part blog, part resource hub, part portfolio.
+      It's the place where I bring my vision of space exploration into one spot: the latest happenings,
+      the tools I'm building, and the ideas that keep me up at night.
     </p>
 
-    <div class="about-highlights">
-      <ul>
-        <li>🔧 Army Reserve IT Specialist (25B)</li>
-        <li>🛠 Building tools for orbital infrastructure</li>
-        <li>📡 Passionate about AI in space & NASA APIs</li>
-      </ul>
+    <div class="about-cards">
+
+      <div class="about-card">
+        <div class="about-card-icon">🌌</div>
+        <h2>Why Space?</h2>
+        <p>
+          Space has fascinated me for as long as I can remember. The idea of exploration — of finding
+          out where we fit in this cosmos, what our stewardship of this corner of the galaxy means for
+          our eternal nature. The thought of seeing a whole new planet, or looking back at our solar
+          system from somewhere entirely new, has always excited and terrified me in equal measure.
+        </p>
+        <p>
+          The science and the potential feel just within reach. If I had to point to one vision of how
+          humanity eventually gets there, it's <em>The Expanse</em> — gritty, realistic, and deeply human.
+          That's the future I'm building toward.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-card-icon">🛰</div>
+        <h2>What I'm Building</h2>
+        <p>
+          Rockets are too costly to be our only way out. The real answer is building <em>out there</em> —
+          mining and gathering resources in space to fund the next step, and using drones and autonomous
+          systems to lead the way before humans follow. I'm working on tools and concepts that explore
+          that future: orbital infrastructure, real-time space data integrations, and software that makes
+          the cosmos more accessible.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-card-icon">🔭</div>
+        <h2>What's Next</h2>
+        <p>
+          Honestly? I don't fully know — and that's part of the fun. This site will grow as my ability
+          to explore and test grows. Launch trackers, deeper NASA integrations, AI tools, more data from
+          the edge of the solar system. Come back and see what's new.
+        </p>
+      </div>
+
     </div>
+
+    <div class="about-connect">
+      <h2>Connect</h2>
+      <div class="connect-grid">
+        <a href="https://substack.com/@natdeviouswings" target="_blank" class="connect-card">
+          <span class="connect-icon">📰</span>
+          <span class="connect-label">Substack</span>
+          <span class="connect-sub">Space writing & ideas</span>
+        </a>
+        <a href="https://github.com/DeviousWings" target="_blank" class="connect-card">
+          <span class="connect-icon">💻</span>
+          <span class="connect-label">GitHub</span>
+          <span class="connect-sub">Code & projects</span>
+        </a>
+        <a href="https://www.linkedin.com/in/nathanaelkingitprofessional/" target="_blank" class="connect-card">
+          <span class="connect-icon">🔗</span>
+          <span class="connect-label">LinkedIn</span>
+          <span class="connect-sub">Professional profile</span>
+        </a>
+      </div>
+    </div>
+
   </section>
 </Layout>
