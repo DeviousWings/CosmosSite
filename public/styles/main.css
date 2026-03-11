@@ -453,8 +453,11 @@ body {
   border-radius: 12px;
 }
 
-.library-grid.custom-layout {
+.library-grid {
   display: grid;
+}
+
+.library-grid.custom-layout {
   grid-template-columns: 2fr 1fr;
   gap: 2rem;
   align-items: start;
@@ -570,6 +573,92 @@ body {
 .rover-slideshow .rover-controls button:hover {
   background: var(--accent);
   color: var(--bg);
+}
+
+/* NEO list */
+.neo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.neo-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.75rem;
+  border-left: 3px solid var(--accent);
+}
+.neo-item.hazardous {
+  border-left-color: #ff4444;
+}
+.neo-item strong {
+  display: block;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+.neo-item small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+.hazard-badge {
+  font-size: 0.75rem;
+  color: #ff4444;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* News section */
+.news-heading {
+  color: var(--accent);
+  font-size: 1.8rem;
+  margin: 3rem 0 1.5rem;
+  text-align: left;
+}
+.library-grid.news-row {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 0;
+}
+.news-link {
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.news-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+.news-link img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+.news-link h3 {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+  flex: 1;
+}
+.news-link p {
+  font-size: 0.85rem;
+}
+.news-link small {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+.news-source {
+  font-size: 0.75rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 800px) {

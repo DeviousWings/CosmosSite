@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ls node_modules/.bin/astro*)",
+      "Bash(curl -s \"https://api.nasa.gov/planetary/apod?api_key=UDeccHdDUILX9ON8ZOPBZ85ouIHOeeczTvJlOlJh\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:4322/library\")",
+      "Bash(curl -s \"http://localhost:4322/library\")",
+      "Bash(curl -s \"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=UDeccHdDUILX9ON8ZOPBZ85ouIHOeeczTvJlOlJh\")",
+      "Bash(npm)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://images-api.nasa.gov/search?q=James+Webb+Space+Telescope&media_type=image&year_start=2022&order=date&page_size=10\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=UDeccHdDUILX9ON8ZOPBZ85ouIHOeeczTvJlOlJh\")",
+      "Bash(curl -s \"https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY\")",
+      "Bash(curl -s \"https://api.nasa.gov/neo/rest/v1/feed/today?api_key=UDeccHdDUILX9ON8ZOPBZ85ouIHOeeczTvJlOlJh\")",
+      "Bash(node -e \"const d=require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\); const j=JSON.parse\\(d\\); const date=Object.keys\\(j.element_count>0?j.near_earth_objects:{}\\)[0]; const neos=j.near_earth_objects[date]; console.log\\(JSON.stringify\\(neos?neos[0]:null,null,2\\)\\)\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:4324/library\")",
+      "Bash(curl -s \"http://localhost:4324/library\")"
+    ]
+  }
+}

@@ -22,7 +22,7 @@ Built with 🚀 Astro.js and powered by the vast beauty of space APIs like NASA 
 
 - ✨ Fetch Astronomy Picture of the Day (APOD)
 - 🚗 Display Mars Rover photos
-- 🔭 Soon: James Webb & Hubble Telescope images
+- 🔭 James Webb Space Telescope images
 - 📝 Personal Blog Feed Integration (Substack)
 - 🔍 Searchable Library for Articles and Data
 - 📱 Fully Responsive Mobile Layout
@@ -63,7 +63,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## 📡 Connect
 
 - 🌐 [My Portfolio Website](https://deviouswings.github.io/PortDev/)
-- ✉️ Email: [yourname@example.com](mailto:yourname@example.com)
+- ✉️ Email: [nskingdev@gmail.com](mailto:nskingdev@gmail.com)
 - 🛸 Follow along as we build a living archive of the cosmos!
 
 ---
@@ -76,5 +76,5 @@ For professional inquiries, partnerships, or licensing opportunities, please con
 
 🌐 [Portfolio Website](https://deviouswings.github.io/PortDev/contact.html)
 
-✉️ Email: yourname@example.com
+✉️ Email: nskingdev@gmail.com
 

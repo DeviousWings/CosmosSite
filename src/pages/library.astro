@@ -2,58 +2,99 @@
 import Layout from "../layouts/Layout.astro";
 import fetchNasaAPOD from "../utils/fetchNasaAPOD";
 import fetchMarsPhotos from "../utils/fetchMarsRoverPhotos";
-// import fetchJWSTData from "../utils/fetchJWSTData";
- 
+import fetchJWSTData from "../utils/fetchJWSTData";
+import fetchSpaceNews from "../utils/fetchSpaceNews";
 
-const apod = await fetchNasaAPOD();
-const marsPhotos = await fetchMarsPhotos();
-// const jwst = await fetchJWSTData();
+let apod = null;
+let marsPhotos = [];
+let jwst = null;
+let spaceNews = [];
+
+try { apod = await fetchNasaAPOD(); } catch (e) { console.error("APOD fetch failed:", e.message); }
+try { marsPhotos = await fetchMarsPhotos(); } catch (e) { console.error("Mars fetch failed:", e.message); }
+try { jwst = await fetchJWSTData(); } catch (e) { console.error("JWST fetch failed:", e.message); }
+try { spaceNews = await fetchSpaceNews(); } catch (e) { console.error("Space news fetch failed:", e.message); }
 ---
 
 <Layout title="Library | Cosmos Library">
   <section class="library-section">
     <h1>🛰️ The Cosmos Library</h1>
     <p>Dive into curated content on space missions, open APIs, telescope data, and more. This page will evolve to showcase real-time integrations and long-form research.</p>
-    <p>🚧 Library content still under construction...</p>
     <!-- APOD Card -->
-    <section>
     <div class="library-grid custom-layout">
       <!-- LARGE: NASA / APOD CARD -->
       <div class="library-card large-card">
         <h2>🌌 Astronomy Picture of the Day</h2>
-        <img src={apod.url} alt={apod.title} />
-        <h3>{apod.title}</h3>
-        <p>{apod.explanation}</p>
+        {apod ? (
+          <>
+            {apod.media_type === "video" ? (
+              <iframe src={apod.url} title={apod.title} width="100%" height="300" allowfullscreen style="border-radius: 10px; border: none;" />
+            ) : (
+              <img src={apod.url} alt={apod.title} />
+            )}
+            <h3>{apod.title}</h3>
+            <p>{apod.explanation.slice(0, 300)}...</p>
+            <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener noreferrer">Read full description →</a>
+          </>
+        ) : (
+          <p>Unable to load today's image. Try again later.</p>
+        )}
       </div>
     
       <!-- RIGHT COLUMN: Two stacked smaller cards -->
       <div class="side-card-group">
         <div class="library-card small-card">
-          <h2>🚗 Curiosity Rover — Sol 1000</h2>
-          <div class="rover-slideshow">
-            <div class="rover-slide-container">
-              {marsPhotos.map((photo, i) => (
-                <div class={`rover-slide${i === 0 ? " active" : ""}`}>
-                  <img src={photo.img_src} alt={`Photo by ${photo.rover.name}`} />
-                  <small>{photo.rover.name} • {photo.camera.full_name}</small>
-                </div>
+          <h2>☄️ Near Earth Objects — Today</h2>
+          {marsPhotos.length > 0 ? (
+            <ul class="neo-list">
+              {marsPhotos.map((neo) => (
+                <li class={`neo-item${neo.hazardous ? " hazardous" : ""}`}>
+                  <strong>{neo.name}</strong>
+                  {neo.hazardous && <span class="hazard-badge">⚠️ Hazardous</span>}
+                  <small>Diameter: {neo.diameter_min}–{neo.diameter_max} m</small>
+                  <small>Miss distance: {neo.miss_distance_km} km</small>
+                  <small>Velocity: {neo.velocity_kph} km/h</small>
+                </li>
               ))}
-            </div>
-            <div class="rover-controls">
-              <button id="prevRover">&#11013;</button>
-              <button id="nextRover">&#10145;</button>
-            </div>
-          </div>
+            </ul>
+          ) : (
+            <p>Near Earth Object data unavailable right now. Try again later.</p>
+          )}
         </div>
     
+        <div class="library-card small-card">
+          <h2>🔭 James Webb Space Telescope</h2>
+          {jwst ? (
+            <>
+              <img src={jwst.image_url} alt={jwst.title} />
+              <h3>{jwst.title}</h3>
+              <p>{jwst.description?.slice(0, 150)}...</p>
+            </>
+          ) : (
+            <p>JWST data unavailable right now. Try again later.</p>
+          )}
+        </div>
       </div>
     </div>
-  </section>
-    <!-- The next section will be more in detail about the moon base, the mars base,
-     and the shipyard build -->
 
-      
+  <!-- Space News Section -->
+  <h2 class="news-heading">📰 Latest Space News</h2>
+  <div class="library-grid news-row">
+    {spaceNews.length > 0 ? (
+      spaceNews.map((article) => (
+        <a href={article.url} target="_blank" rel="noopener noreferrer" class="library-card small-card news-link">
+          {article.image_url && <img src={article.image_url} alt={article.title} />}
+          <span class="news-source">{article.news_site}</span>
+          <h3>{article.title}</h3>
+          <p>{article.summary?.slice(0, 120)}...</p>
+          <small>{article.published_at}</small>
+        </a>
+      ))
+    ) : (
+      <p>Space news unavailable right now. Try again later.</p>
+    )}
+  </div>
+
   </section>
-  <script type="module" src="/scripts/roverSlideshow.js"></script>
 
 </Layout>
