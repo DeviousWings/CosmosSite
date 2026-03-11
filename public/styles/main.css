@@ -103,6 +103,35 @@ body {
   border-radius: 10px;
 }
 
+.time-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.time-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  width: 2.8rem;
+}
+.time-value {
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: var(--text-light);
+  letter-spacing: 0.05em;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -128,9 +157,17 @@ body {
 footer {
   background: var(--nav-hover-background-color);
   text-align: center;
-  padding: 1em;
+  padding: 2.5rem 1rem;
   color: var(--text-muted);
   font-family: var(--font-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer p {
+  margin: 0;
 }
 
 .btn-coffee {
@@ -138,11 +175,11 @@ footer {
   color: var(--headline-color-on-white);
   border: none;
   border-radius: 10px;
-  padding: 0.5em 1em;
+  padding: 0.5em 1.25em;
   font-size: 1em;
-  margin-bottom: 2rem;
   display: inline-block;
   cursor: pointer;
+  text-decoration: none;
 }
 
 footer nav a {
@@ -154,27 +191,74 @@ footer nav a {
 footer nav a:hover {
   color: var(--text-light);
 } 
-@media (max-width: 700px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+@media (max-width: 768px) {
+  /* --- Navbar: logo + clock on row 1, nav links on row 2 --- */
+  .site-header {
+    padding: 0.6rem 1rem;
   }
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    width: 100%;
-    margin-top: 1rem;
+  .navbar {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
   }
   .logo img {
-    height: 50px;
+    height: 44px;
   }
-  .hero-section {
-    text-align: center;
-    padding: 1rem;
+  #user-time-info {
+    margin-left: auto;
   }
+  .nav-links {
+    order: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin: 0.25rem 0 0;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  /* --- Hero --- */
+  #hero {
+    padding: 5em 1.25rem;
+  }
+  #hero h1 {
+    font-size: 2rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* --- Blog --- */
   .blog-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* --- Library cards --- */
+  .library-section {
+    padding: 1.5rem 1rem;
+  }
+  .library-grid.news-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Footer --- */
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  footer nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
   }
 }
 .btn-accent {
@@ -491,6 +575,13 @@ body {
   margin-bottom: 1rem;
 }
 
+.left-card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 0;
+}
+
 .side-card-group {
   display: flex;
   flex-direction: column;
@@ -687,6 +778,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  min-height: 60vh;
 }
 .about-section h1 {
   font-size: 2.5rem;

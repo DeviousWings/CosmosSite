@@ -35,19 +35,26 @@ const {
     const utcHours = now.getUTCHours().toString().padStart(2, '0');
     const utcMinutes = now.getUTCMinutes().toString().padStart(2, '0');
     const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const localTime = now.toLocaleTimeString('en-US', {
+      hour: '2-digit', minute: '2-digit', hour12: false, timeZone: userTimezone
+    });
+    const tzShort = now.toLocaleTimeString('en-US', {
+      timeZoneName: 'short', timeZone: userTimezone
+    }).split(' ').pop();
 
     const timeInfoDiv = document.getElementById('user-time-info');
     if (timeInfoDiv) {
       timeInfoDiv.innerHTML = `
-        <div style="text-align: right; font-size: 0.8rem;">
-          UTC: ${utcHours}:${utcMinutes} | ${userTimezone}
+        <div class="time-widget">
+          <div class="time-row"><span class="time-label">UTC</span><span class="time-value">${utcHours}:${utcMinutes}</span></div>
+          <div class="time-row"><span class="time-label">${tzShort}</span><span class="time-value">${localTime}</span></div>
         </div>
       `;
     }
   }
 
   updateUserTimeInfo();
-  setInterval(updateUserTimeInfo, 60000); // Update every minute
+  setInterval(updateUserTimeInfo, 1000);
 </script>
       
         <ul class="nav-links">
