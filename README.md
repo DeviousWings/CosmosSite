@@ -1,58 +1,106 @@
-# 🌌 Cosmic Library
+# 🌌 The Cosmos Library
 
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](./LICENSE)
 [![Built with Astro](https://img.shields.io/badge/Built%20with-Astro-blueviolet?style=for-the-badge)](https://astro.build/)
-
-Welcome to the **Cosmic Library** — a dynamic space exploration portal featuring real-time data, astronomy media, and personal space research blogs.  
-Built with 🚀 Astro.js and powered by the vast beauty of space APIs like NASA APOD, Mars Rover Photos, and more.
-
-
+[![Deployed on Netlify](https://img.shields.io/badge/Deployed%20on-Netlify-00C7B7?style=for-the-badge)](https://www.netlify.com/)
 
 > "Exploration is really the essence of the human spirit." — Frank Borman
 
----
-
-## 📸 Live Preview
-
-[🚀 View the Live Site](https://cosmiclibrary.netlify.app/)  
+**The Cosmos Library** is a living space exploration portal — part portfolio, part resource hub, part personal archive. It pulls real-time data from NASA and space agencies to bring the cosmos to your browser. Built by a U.S. Army veteran and web developer with a lifelong obsession with what's out there.
 
 ---
 
-## 🚁 Features
+## 🚀 Live Site
 
-- ✨ Fetch Astronomy Picture of the Day (APOD)
-- 🚗 Display Mars Rover photos
-- 🔭 James Webb Space Telescope images
-- 📝 Personal Blog Feed Integration (Substack)
-- 🔍 Searchable Library for Articles and Data
-- 📱 Fully Responsive Mobile Layout
-- 🌙 Dark Mode (Coming Soon)
-- ⚙️ API Error Handling and Optimization
+[🌐 View The Cosmos Library](https://cosmiclibrary.netlify.app/)
 
 ---
 
-## 🚀 Project Roadmap
+## ✨ Features
 
-| Phase | Progress | Status |
-|:------|:---------|:-------|
-| **Phase 1: Core API Integration** | ██████████░░░░ 70% | 🔵 In Progress |
-| **Phase 2: Personal Blog System** | ████░░░░░░░░ 30% | ⚪ Not Started |
-| **Phase 3: Library Expansion** | ███░░░░░░░░░ 25% | ⚪ Not Started |
-| **Phase 4: UI/UX Polish** | ██░░░░░░░░░░ 15% | ⚪ Not Started |
-| **Phase 5: Hosting and Optimization** | ░░░░░░░░░░░░ 0% | ⚪ Not Started |
-| **Stretch Goals** | ░░░░░░░░░░░░ 0% | ⚪ Dream Stage 🌟 |
-
-🔗 [View Full Roadmap](./ROADMAP.md)
+- 🌠 **Astronomy Picture of the Day (APOD)** — NASA's daily image or video with full description
+- 🔭 **James Webb Space Telescope** — Latest JWST imagery from the NASA Images API
+- ☄️ **Near Earth Objects (NEO)** — Today's closest asteroid approaches via NASA NeoWS
+- 🚀 **Upcoming Rocket Launches** — Live launch schedule from The Space Devs API
+- 🛸 **Space Events** — ISS events, spacecraft releases (including NG-23 Cygnus), and more
+- 📰 **Latest Space News** — Headlines from the Spaceflight News API
+- 🕐 **Live UTC + Local Time Widget** — Always-on clock in the navbar
+- 📝 **Personal Blog** — Space thoughts, research, and mission breakdowns
+- 📱 **Fully Responsive** — Mobile-first layout that works on any screen size
+- ⚙️ **Resilient API Handling** — Every API call has try/catch so one failure never breaks the page
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Astro.js, HTML5, SCSS
-- **Styling:** Custom SCSS Modules (No Tailwind)
-- **APIs:** NASA APOD, Mars Rover Photos, (future: James Webb, Hubble)
-- **Deployment:** Netlify (Deployed)
-- **Other Tools:** Markdown for blogs, Responsive Design principles
+| Layer | Technology |
+|:------|:-----------|
+| **Framework** | [Astro.js](https://astro.build/) v5 (SSR) |
+| **Styling** | Custom SCSS / CSS (no Tailwind) |
+| **APIs** | NASA APOD, NASA Images (JWST), NeoWS, The Space Devs (LL2), Spaceflight News API |
+| **Deployment** | [Netlify](https://www.netlify.com/) |
+| **Blog** | Markdown + Substack integration |
+
+---
+
+## 📡 APIs Used
+
+| API | Purpose | Docs |
+|:----|:--------|:-----|
+| NASA APOD | Astronomy Picture of the Day | [api.nasa.gov](https://api.nasa.gov/) |
+| NASA Images API | JWST imagery | [images.nasa.gov](https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf) |
+| NASA NeoWS | Near Earth Object data | [api.nasa.gov](https://api.nasa.gov/) |
+| The Space Devs LL2 | Upcoming launches & space events | [thespacedevs.com](https://thespacedevs.com/) |
+| Spaceflight News API | Space news headlines | [spaceflightnewsapi.net](https://www.spaceflightnewsapi.net/) |
+
+---
+
+## 🗺️ Roadmap
+
+| Phase | Description | Status |
+|:------|:------------|:-------|
+| **Phase 1** | Core API Integration (APOD, JWST, NEO) | ✅ Complete |
+| **Phase 2** | Personal Blog System | ✅ Complete |
+| **Phase 3** | Library Expansion (Launches, Events, News) | ✅ Complete |
+| **Phase 4** | UI/UX Polish + Mobile Responsive | ✅ Complete |
+| **Phase 5** | Hosting & Deployment (Netlify) | ✅ Live |
+| **Phase 6** | Launch Countdown Timers | 🔵 In Progress |
+| **Stretch** | Dark/Light Mode Toggle, AI integrations, Orbital tracker | 🌟 Dream Stage |
+
+---
+
+## 🧑‍💻 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- A free [NASA API key](https://api.nasa.gov/)
+
+### Install & Run
+
+```bash
+# Clone the repo
+git clone https://github.com/DeviousWings/cosmossite.git
+cd cosmossite
+
+# Install dependencies
+npm install
+
+# Add your NASA API key
+echo "PUBLIC_NASA_API_KEY=your_key_here" > .env
+
+# Start the dev server
+npm run dev
+```
+
+### Environment Variables
+
+Create a `.env` file in the root:
+
+```env
+PUBLIC_NASA_API_KEY=your_nasa_api_key_here
+```
+
+---
 
 ## 📜 License
 
@@ -62,19 +110,10 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 📡 Connect
 
-- 🌐 [My Portfolio Website](https://deviouswings.github.io/PortDev/)
-- ✉️ Email: [nskingdev@gmail.com](mailto:nskingdev@gmail.com)
-- 🛸 Follow along as we build a living archive of the cosmos!
+- 🌐 [Portfolio](https://deviouswings.github.io/PortDev/)
+- ✉️ [nskingdev@gmail.com](mailto:nskingdev@gmail.com)
+- ☕ [Buy Me a Coffee](https://buymeacoffee.com/deviouswings)
 
 ---
 
-## 📡 About Cosmic Library
-The Cosmic Library is a curated knowledge hub dedicated to bringing the wonders of space exploration to researchers, students, and enthusiasts alike.
-Through real-time data and engaging articles, we aim to inspire and educate the next generation of cosmic explorers.
-
-For professional inquiries, partnerships, or licensing opportunities, please contact:
-
-🌐 [Portfolio Website](https://deviouswings.github.io/PortDev/contact.html)
-
-✉️ Email: nskingdev@gmail.com
-
+*Built with curiosity, caffeine, and a deep belief that humanity's future is out there.*
