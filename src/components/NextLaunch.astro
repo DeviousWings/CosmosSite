@@ -1,0 +1,88 @@
+---
+import fetchUpcomingLaunches from "../utils/fetchUpcomingLaunches.js";
+
+let launch = null;
+try {
+  const launches = await fetchUpcomingLaunches(1);
+  launch = launches[0] ?? null;
+} catch (e) {
+  console.error("Next launch fetch failed:", e.message);
+}
+
+const launchDate = launch ? new Date(launch.net) : null;
+const launchISO = launchDate ? launchDate.toISOString() : null;
+const launchDisplay = launchDate
+  ? launchDate.toLocaleString("en-US", {
+      month: "short", day: "numeric", year: "numeric",
+      hour: "2-digit", minute: "2-digit", timeZoneName: "short",
+    })
+  : null;
+---
+
+<section class="next-launch-section">
+  <h2>🚀 Next Launch</h2>
+  {launch ? (
+    <div class="next-launch-card">
+      {launch.image && (
+        <div class="next-launch-image">
+          <img src={launch.image} alt={launch.name} />
+        </div>
+      )}
+      <div class="next-launch-info">
+        <div class="launch-status-badge">{launch.status}</div>
+        <h3 class="launch-name">{launch.name}</h3>
+        <p class="launch-meta">
+          🛸 {launch.rocket}
+          {launch.pad && <> &nbsp;·&nbsp; 📍 {launch.pad}</>}
+          {launch.location && <>, {launch.location}</>}
+        </p>
+        {launch.mission_desc && (
+          <p class="launch-mission-desc">{launch.mission_desc.slice(0, 180)}...</p>
+        )}
+        <p class="launch-time">🗓 {launchDisplay}</p>
+
+        <div class="launch-countdown" id="launch-countdown" data-net={launchISO}>
+          <div class="countdown-block"><span class="cd-num" id="cd-days">--</span><span class="cd-label">Days</span></div>
+          <div class="countdown-block"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">Hours</span></div>
+          <div class="countdown-block"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">Mins</span></div>
+          <div class="countdown-block"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Secs</span></div>
+        </div>
+
+        <a href="https://thespacedevs.com" target="_blank" class="launch-source">
+          Data via The Space Devs →
+        </a>
+      </div>
+    </div>
+  ) : (
+    <p class="launch-unavailable">Launch data unavailable right now. Try again later.</p>
+  )}
+</section>
+
+<script is:inline>
+  (function () {
+    const el = document.getElementById("launch-countdown");
+    if (!el) return;
+    const target = new Date(el.dataset.net).getTime();
+
+    function tick() {
+      const diff = target - Date.now();
+      if (diff <= 0) {
+        document.getElementById("cd-days").textContent = "0";
+        document.getElementById("cd-hours").textContent = "0";
+        document.getElementById("cd-mins").textContent = "0";
+        document.getElementById("cd-secs").textContent = "00";
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      document.getElementById("cd-days").textContent = d;
+      document.getElementById("cd-hours").textContent = h;
+      document.getElementById("cd-mins").textContent = m;
+      document.getElementById("cd-secs").textContent = String(s).padStart(2, "0");
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>

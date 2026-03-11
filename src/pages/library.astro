@@ -4,16 +4,22 @@ import fetchNasaAPOD from "../utils/fetchNasaAPOD";
 import fetchMarsPhotos from "../utils/fetchMarsRoverPhotos";
 import fetchJWSTData from "../utils/fetchJWSTData";
 import fetchSpaceNews from "../utils/fetchSpaceNews";
+import fetchUpcomingLaunches from "../utils/fetchUpcomingLaunches";
+import fetchUpcomingEvents from "../utils/fetchUpcomingEvents";
 
 let apod = null;
 let marsPhotos = [];
 let jwst = null;
 let spaceNews = [];
+let launches = [];
+let spaceEvents = [];
 
 try { apod = await fetchNasaAPOD(); } catch (e) { console.error("APOD fetch failed:", e.message); }
 try { marsPhotos = await fetchMarsPhotos(); } catch (e) { console.error("Mars fetch failed:", e.message); }
 try { jwst = await fetchJWSTData(); } catch (e) { console.error("JWST fetch failed:", e.message); }
 try { spaceNews = await fetchSpaceNews(); } catch (e) { console.error("Space news fetch failed:", e.message); }
+try { launches = await fetchUpcomingLaunches(8); } catch (e) { console.error("Launches fetch failed:", e.message); }
+try { spaceEvents = await fetchUpcomingEvents(6); } catch (e) { console.error("Events fetch failed:", e.message); }
 ---
 
 <Layout title="Library | Cosmos Library">
@@ -93,6 +99,78 @@ try { spaceNews = await fetchSpaceNews(); } catch (e) { console.error("Space new
       ))
     ) : (
       <p>Space news unavailable right now. Try again later.</p>
+    )}
+  </div>
+
+  <!-- Upcoming Launches Section -->
+  <h2 class="news-heading">🚀 Upcoming Launches</h2>
+  <div class="launches-list">
+    {launches.length > 0 ? (
+      launches.map((launch) => (
+        <div class="launch-row">
+          {launch.image && (
+            <img class="launch-row-img" src={launch.image} alt={launch.name} />
+          )}
+          <div class="launch-row-info">
+            <div class="launch-row-top">
+              <span class="launch-status-badge">{launch.status}</span>
+              <span class="launch-row-rocket">🛸 {launch.rocket}</span>
+            </div>
+            <h3 class="launch-row-name">{launch.name}</h3>
+            {launch.pad && (
+              <p class="launch-row-pad">📍 {launch.pad}{launch.location ? `, ${launch.location}` : ""}</p>
+            )}
+            <p class="launch-row-time">
+              🗓 {new Date(launch.net).toLocaleString("en-US", {
+                month: "short", day: "numeric", year: "numeric",
+                hour: "2-digit", minute: "2-digit", timeZoneName: "short"
+              })}
+            </p>
+          </div>
+        </div>
+      ))
+    ) : (
+      <p>Launch schedule unavailable right now. Try again later.</p>
+    )}
+  </div>
+
+  <!-- Space Events Section -->
+  <h2 class="news-heading">🛸 Upcoming Space Events</h2>
+  <div class="launches-list">
+    {spaceEvents.length > 0 ? (
+      spaceEvents.map((event) => (
+        <div class="launch-row">
+          {event.image && (
+            <img class="launch-row-img" src={event.image} alt={event.name} />
+          )}
+          <div class="launch-row-info">
+            <div class="launch-row-top">
+              <span class="launch-status-badge event-type-badge">{event.type}</span>
+            </div>
+            <h3 class="launch-row-name">{event.name}</h3>
+            {event.location && (
+              <p class="launch-row-pad">📍 {event.location}</p>
+            )}
+            {event.description && (
+              <p class="launch-row-desc">{event.description.slice(0, 160)}...</p>
+            )}
+            <p class="launch-row-time">
+              🗓 {new Date(event.date).toLocaleString("en-US", {
+                month: "short", day: "numeric", year: "numeric",
+                hour: "2-digit", minute: "2-digit", timeZoneName: "short"
+              })}
+            </p>
+            {(event.video_url || event.news_url) && (
+              <div class="event-links">
+                {event.video_url && <a href={event.video_url} target="_blank" rel="noopener noreferrer">▶ Watch</a>}
+                {event.news_url && <a href={event.news_url} target="_blank" rel="noopener noreferrer">📰 Read more</a>}
+              </div>
+            )}
+          </div>
+        </div>
+      ))
+    ) : (
+      <p>Space events unavailable right now. Try again later.</p>
     )}
   </div>
 
