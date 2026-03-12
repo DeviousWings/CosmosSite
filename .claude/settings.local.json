@@ -14,7 +14,8 @@
       "Bash(curl -s \"https://api.nasa.gov/neo/rest/v1/feed/today?api_key=UDeccHdDUILX9ON8ZOPBZ85ouIHOeeczTvJlOlJh\")",
       "Bash(node -e \"const d=require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\); const j=JSON.parse\\(d\\); const date=Object.keys\\(j.element_count>0?j.near_earth_objects:{}\\)[0]; const neos=j.near_earth_objects[date]; console.log\\(JSON.stringify\\(neos?neos[0]:null,null,2\\)\\)\")",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"http://localhost:4324/library\")",
-      "Bash(curl -s \"http://localhost:4324/library\")"
+      "Bash(curl -s \"http://localhost:4324/library\")",
+      "Bash(npm view:*)"
     ]
   }
 }
