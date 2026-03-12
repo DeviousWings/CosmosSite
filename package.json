@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^7.0.2",h
+    "@astrojs/netlify": "^7.0.2",
     "@netlify/blobs": "^10.7.1",
     "astro": "^6.0.4",
     "dotenv": "^17.3.1",
