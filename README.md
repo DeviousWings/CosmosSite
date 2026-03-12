@@ -71,6 +71,7 @@ Space has always fascinated me — the idea of exploration, of finding out what 
 | **Phase 6** | Launch Countdown Timers + Nav Dropdown | ✅ Complete |
 | **Phase 7** | Featured Object Pages (Comet C/2026 A1) | ✅ Complete |
 | **Stretch** | Dark/Light Mode, AI integrations, Orbital tracker, More deep-dive pages | 🌟 Dream Stage |
+| **Stretch** | Add Sun news from 
 
 ---
 
