@@ -1,0 +1,186 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { fetchCometData } from "../../utils/fetchCometData.js";
+
+let comet = null;
+try { comet = await fetchCometData(); } catch (e) { console.error("Comet data fetch failed:", e.message); }
+---
+
+<Layout
+  title="Comet C/2026 A1 (ATLAS) — The Cosmos Library"
+  description="Tracking Comet C/2026 A1 (ATLAS) — orbital data, visibility forecasts, and everything you need to watch the comet of 2026."
+>
+  <!-- Hero -->
+  <section class="comet-hero">
+    <div class="comet-hero-inner">
+      <p class="comet-label">☄️ Featured Comet</p>
+      <h1>Comet C/2026 A1</h1>
+      <p class="comet-subtitle">ATLAS &mdash; The Comet of 2026</p>
+      <p class="comet-tagline">
+        Discovered by the ATLAS survey in January 2026, this long-period comet may become
+        one of the brightest naked-eye comets in years as it rounds the Sun later this year.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="comet-stats-bar">
+    <div class="stat-item">
+      <span class="stat-label">Perihelion Distance</span>
+      <span class="stat-value">{comet?.perihelionAU ? `${comet.perihelionAU} AU` : "—"}</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-label">Perihelion Date</span>
+      <span class="stat-value stat-date">{comet?.perihelionDate ?? "—"}</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-label">Eccentricity</span>
+      <span class="stat-value">{comet?.eccentricity ?? "—"}</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-label">Inclination</span>
+      <span class="stat-value">{comet?.inclination ? `${comet.inclination}°` : "—"}</span>
+    </div>
+  </section>
+
+  <div class="comet-body">
+
+    <!-- About -->
+    <section class="comet-card">
+      <h2>What Is Comet C/2026 A1?</h2>
+      <p>
+        Comet C/2026 A1 was discovered by the <strong>ATLAS (Asteroid Terrestrial-impact Last Alert System)</strong>
+        survey in January 2026 — the same program that discovered the notable Comet ATLAS (C/2019 Y4) in 2019.
+        The "C/" designation tells us this is a non-periodic comet, meaning it takes thousands of years to
+        complete one orbit around the Sun — if it ever returns at all.
+      </p>
+      <p>
+        What makes this one exciting: its trajectory brings it within striking distance of the inner solar system
+        in late 2026, and early brightness estimates suggest it could reach naked-eye visibility. That's rare.
+        Most comets fizzle out before they get close enough to put on a show.
+      </p>
+      <p>
+        Think of it this way — you're watching a visitor from the outer dark, a chunk of ancient ice and rock
+        that formed when our solar system was young, now falling inward for perhaps the first time in human history.
+        That's not nothing.
+      </p>
+    </section>
+
+    <!-- Orbital Data -->
+    <section class="comet-card">
+      <h2>Orbital Profile</h2>
+      {comet ? (
+        <div class="orbital-grid">
+          <div class="orbital-item">
+            <span class="orbital-label">Perihelion Distance</span>
+            <span class="orbital-value">{comet.perihelionAU ? `${comet.perihelionAU} AU` : "—"}</span>
+          </div>
+          <div class="orbital-item">
+            <span class="orbital-label">Perihelion Date</span>
+            <span class="orbital-value">{comet.perihelionDate ?? "—"}</span>
+          </div>
+          <div class="orbital-item">
+            <span class="orbital-label">Eccentricity</span>
+            <span class="orbital-value">{comet.eccentricity ?? "—"}</span>
+          </div>
+          <div class="orbital-item">
+            <span class="orbital-label">Inclination</span>
+            <span class="orbital-value">{comet.inclination ? `${comet.inclination}°` : "—"}</span>
+          </div>
+          <div class="orbital-item">
+            <span class="orbital-label">Orbital Period</span>
+            <span class="orbital-value">{comet.orbitalPeriod ? `~${comet.orbitalPeriod} yrs` : "Non-periodic"}</span>
+          </div>
+          <div class="orbital-item">
+            <span class="orbital-label">First Observed</span>
+            <span class="orbital-value">{comet.firstObs ?? "—"}</span>
+          </div>
+        </div>
+      ) : (
+        <p class="data-unavailable">Orbital data temporarily unavailable. Check back shortly.</p>
+      )}
+    </section>
+
+    <!-- Visibility Timeline -->
+    <section class="comet-card">
+      <h2>When Can You See It?</h2>
+      <div class="visibility-timeline">
+        <div class="vis-phase">
+          <div class="vis-dot vis-past"></div>
+          <div class="vis-content">
+            <h3>Early 2026 — Discovery &amp; Approach</h3>
+            <p>
+              Currently approaching the inner solar system. Too faint for naked-eye observation —
+              binoculars or a telescope required.
+            </p>
+          </div>
+        </div>
+        <div class="vis-phase">
+          <div class="vis-dot vis-upcoming"></div>
+          <div class="vis-content">
+            <h3>Mid 2026 — Brightening</h3>
+            <p>
+              Expected to become binocular-visible as it nears perihelion. Look for it in the pre-dawn
+              sky in the northern hemisphere. Comets are notoriously unpredictable — estimates vary widely.
+            </p>
+          </div>
+        </div>
+        <div class="vis-phase">
+          <div class="vis-dot vis-peak"></div>
+          <div class="vis-content">
+            <h3>Late 2026 — Perihelion &amp; Peak</h3>
+            <p>
+              Closest approach to the Sun. Potentially naked-eye visible, possibly with a visible tail.
+              Whether it delivers depends on how much the nucleus holds together under solar heating —
+              a lesson Comet ATLAS (2020) taught us the hard way.
+            </p>
+          </div>
+        </div>
+        <div class="vis-phase">
+          <div class="vis-dot vis-past"></div>
+          <div class="vis-content">
+            <h3>Post-Perihelion — Fading</h3>
+            <p>
+              After rounding the Sun it fades back into the dark. If it's a non-returning comet,
+              this is the only chance anyone alive will ever have to see it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Magnitude Guide -->
+    <section class="comet-card">
+      <h2>Understanding Visual Magnitude</h2>
+      <div class="mag-guide">
+        <div class="mag-item">
+          <span class="mag-num bright">−4</span>
+          <span class="mag-desc">Venus at brightest — impossible to miss</span>
+        </div>
+        <div class="mag-item">
+          <span class="mag-num bright">0</span>
+          <span class="mag-desc">Bright stars like Vega — very easy naked eye</span>
+        </div>
+        <div class="mag-item">
+          <span class="mag-num mid">+4</span>
+          <span class="mag-desc">Naked-eye limit in suburban skies</span>
+        </div>
+        <div class="mag-item">
+          <span class="mag-num mid">+7</span>
+          <span class="mag-desc">Binoculars needed — dark sky required</span>
+        </div>
+        <div class="mag-item">
+          <span class="mag-num dim">+10</span>
+          <span class="mag-desc">Small telescope territory</span>
+        </div>
+      </div>
+      <p class="mag-note">
+        Lower (or negative) numbers = brighter. Watch the perihelion date above — that's when peak brightness is expected.
+      </p>
+    </section>
+
+  </div>
+</Layout>
