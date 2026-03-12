@@ -168,14 +168,14 @@ body {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 0.25rem);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(10, 14, 35, 0.97);
   border: 1px solid rgba(100, 160, 255, 0.2);
   border-radius: 8px;
   list-style: none;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0 0.5rem;
   margin: 0;
   min-width: 180px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
@@ -675,6 +675,23 @@ body {
   color: var(--text-muted);
   font-style: italic;
 }
+.orbit-pending {
+  background: rgba(168,218,220,0.05);
+  border: 1px solid rgba(168,218,220,0.15);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+.orbit-pending p {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.orbit-pending strong { color: var(--text-light); }
+.orbit-jpl-link {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.orbit-jpl-link:hover { text-decoration: underline; }
 .orbital-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -759,6 +776,40 @@ body {
   font-size: 0.85rem;
   font-style: italic;
   color: var(--text-muted);
+}
+.map-note {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.orbit-map-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.orbit-map {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 @media (max-width: 600px) {
   .comet-stats-bar { padding: 1rem; }
@@ -1409,6 +1460,67 @@ body {
   .launch-row-img {
     width: 80px;
     height: 80px;
+  }
+  /* Launch & event list rows */
+  .launch-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .launch-row-img {
+    width: 100%;
+    height: 160px;
+    border-radius: 8px;
+  }
+  .launch-row-info {
+    width: 100%;
+  }
+  .launch-row-info h3 {
+    font-size: 1rem;
+  }
+  .launch-row-info p {
+    text-align: left;
+  }
+  /* Sections padding */
+  .launches-section,
+  .events-section {
+    padding: 2rem 1rem;
+  }
+  .launches-section h2,
+  .events-section h2 {
+    font-size: 1.4rem;
+  }
+  /* News section */
+  .news-heading {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+  }
+  /* Comet stats bar */
+  .comet-stats-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 0.75rem;
+  }
+  .stat-divider { display: none; }
+  .stat-item {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-bottom: 0.6rem;
+  }
+  .stat-item:last-child { border-bottom: none; }
+  .stat-value { font-size: 1rem; }
+  /* Comet body */
+  .comet-body { padding: 1.5rem 1rem; }
+  .comet-card { padding: 1.25rem; }
+  .orbital-grid { grid-template-columns: 1fr 1fr; }
+  /* Featured topics home */
+  .featured-topics-grid {
+    grid-template-columns: 1fr;
   }
 }
 /*# sourceMappingURL=main.css.map */

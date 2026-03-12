@@ -48,13 +48,16 @@ const launchDisplay = launchDate
           <div class="countdown-block"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">Secs</span></div>
         </div>
 
-        <a href="https://thespacedevs.com" target="_blank" class="launch-source">
-          Data via The Space Devs →
-        </a>
+        <div class="launch-footer-links">
+          <a href="https://thespacedevs.com/launches" target="_blank" class="launch-source">
+            🔴 Live updates on The Space Devs →
+          </a>
+          <span class="launch-cache-note">Launch data refreshes daily at 6 AM UTC</span>
+        </div>
       </div>
     </div>
   ) : (
-    <p class="launch-unavailable">Launch data unavailable right now. Try again later.</p>
+    <p class="launch-unavailable">🚀 Launch data is temporarily unavailable — the Space Devs API has a limited free tier. Check back in a few minutes or visit <a href="https://thespacedevs.com" target="_blank">thespacedevs.com</a> directly.</p>
   )}
 </section>
 
