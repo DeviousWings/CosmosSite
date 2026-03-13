@@ -132,6 +132,14 @@ try { spaceEvents = await fetchUpcomingEvents(6); } catch (e) { console.error("E
     ) : (
       <p>Launch schedule unavailable right now. Try again later.</p>
     )}
+    {launches.length > 0 && (
+      <div class="space-devs-footer">
+        <a href="https://thespacedevs.com/launches" target="_blank" rel="noopener noreferrer" class="space-devs-link">
+          🔴 Live updates &amp; full schedule on The Space Devs →
+        </a>
+        <span class="cache-note">Launch data refreshes daily at 6 AM UTC</span>
+      </div>
+    )}
   </div>
 
   <!-- Space Events Section -->

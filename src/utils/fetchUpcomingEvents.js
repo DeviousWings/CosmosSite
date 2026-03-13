@@ -27,8 +27,9 @@ export default async function fetchUpcomingEvents(limit = 5) {
   }
 
   // ── 2. Direct API call (local dev or empty/stale cache) ───────────────────
+  const now = new Date().toISOString().replace(/\.\d+Z$/, "Z");
   const response = await fetch(
-    `https://ll.thespacedevs.com/2.2.0/event/upcoming/?format=json&limit=${limit}&ordering=date`
+    `https://ll.thespacedevs.com/2.2.0/event/upcoming/?format=json&limit=${limit}&ordering=date&date__gt=${now}`
   );
 
   if (response.status === 429) {
