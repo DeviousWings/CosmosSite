@@ -67,6 +67,7 @@ const launchDisplay = launchDate
     if (!el) return;
     const target = new Date(el.dataset.net).getTime();
 
+    let timer;
     function tick() {
       const diff = target - Date.now();
       if (diff <= 0) {
@@ -74,6 +75,7 @@ const launchDisplay = launchDate
         document.getElementById("cd-hours").textContent = "0";
         document.getElementById("cd-mins").textContent = "0";
         document.getElementById("cd-secs").textContent = "00";
+        clearInterval(timer);
         return;
       }
       const d = Math.floor(diff / 86400000);
@@ -86,6 +88,6 @@ const launchDisplay = launchDate
       document.getElementById("cd-secs").textContent = String(s).padStart(2, "0");
     }
     tick();
-    setInterval(tick, 1000);
+    timer = setInterval(tick, 1000);
   })();
 </script>
