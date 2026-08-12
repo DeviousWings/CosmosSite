@@ -4,3 +4,9 @@
 
 [functions]
   node_bundler = "esbuild"
+
+# Redirect all routing requests to index.html for Vite client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
