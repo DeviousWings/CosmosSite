@@ -1,6 +1,12 @@
 version: 2
 updates:
+  # Maintain version updates for npm packages
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
+    # Group security updates together to prevent PR spam
+    groups:
+      dependencies:
+        patterns:
+          - "*"
