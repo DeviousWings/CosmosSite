@@ -12,7 +12,7 @@
     "@astrojs/netlify": "^7.0.2",
     "@netlify/blobs": "^10.7.4",
     "astro": "^6.0.4",
-    "dotenv": "^17.3.1",
+    "dotenv": "^17.4.0",
     "rss-parser": "^3.13.0"
   }
 }
