@@ -1,6 +1,24 @@
 version: 2
 updates:
+  # 1. NPM Package Ecosystem (Targeting dev branch)
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    target-branch: "dev"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "npm"
+
+  # 2. GitHub Actions Ecosystem (Keeps CI/CD pipelines updated)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
+    labels:
+      - "ci"
+      - "dependencies"
